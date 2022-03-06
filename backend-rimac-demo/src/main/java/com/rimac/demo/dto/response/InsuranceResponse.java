@@ -2,7 +2,7 @@ package com.rimac.demo.dto.response;
 
 import java.io.Serializable;
 
-public class InsuranceListResponse implements Serializable {
+public class InsuranceResponse implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
@@ -18,7 +18,7 @@ public class InsuranceListResponse implements Serializable {
     private String dateSince;
     private String dateUntil;
     
-	public InsuranceListResponse(Long insuranceId, String name, String lastName, String numPolicy, String nameContractor,
+	public InsuranceResponse(Long insuranceId, String name, String lastName, String numPolicy, String nameContractor,
 			int anio, String chassis, String motor, String hasGas, String dateSince, String dateUntil) {
 		super();
 		this.insuranceId = insuranceId;
@@ -34,7 +34,7 @@ public class InsuranceListResponse implements Serializable {
 		this.dateUntil = dateUntil;
 	}
 
-	public InsuranceListResponse() {
+	public InsuranceResponse() {
 		
 	}
 	

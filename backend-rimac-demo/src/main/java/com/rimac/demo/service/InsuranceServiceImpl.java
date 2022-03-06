@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.rimac.demo.dto.response.InsuranceListResponse;
+import com.rimac.demo.dto.response.InsuranceResponse;
 import com.rimac.demo.entity.Insurance;
 import com.rimac.demo.repository.InsuranceRepository;
 
@@ -21,13 +21,13 @@ public class InsuranceServiceImpl implements InsuranceService {
 
 	@Override
 	@Transactional(readOnly = true)
-	public List<InsuranceListResponse> getAllInsurance() {
+	public List<InsuranceResponse> getAllInsurance() {
 		
 		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy"); 
 		
 		List<Insurance> insuraListDB = (List<Insurance>) insuranceRepository.findAll();
-		List<InsuranceListResponse> insuranceListResponse = insuraListDB.stream().map(temp -> {
-			InsuranceListResponse insuranceItem = new InsuranceListResponse();
+		List<InsuranceResponse> insuranceListResponse = insuraListDB.stream().map(temp -> {
+			InsuranceResponse insuranceItem = new InsuranceResponse();
 			insuranceItem.setInsuranceId(temp.getInsuranceId());
 			insuranceItem.setAnio(temp.getAnio());
 			insuranceItem.setChassis(temp.getChassis());
