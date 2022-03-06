@@ -8,6 +8,6 @@ import com.rimac.demo.entity.Insurance;
 public interface InsuranceService {
 
 	public List<InsuranceResponse> getAllInsurance();
-	public Insurance getInsurance(int insuranceId);
+	public InsuranceResponse getInsurance(Long insuranceId);
 	
 }

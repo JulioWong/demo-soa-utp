@@ -6,6 +6,6 @@ import com.rimac.demo.entity.Insurance;
 
 public interface InsuranceRepository extends CrudRepository<Insurance, Long> {
 
-	public Insurance findByInsuranceId(int insuranceId);
+	public Insurance findByInsuranceId(Long insuranceId);
 	
 }

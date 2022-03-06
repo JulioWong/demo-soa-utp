@@ -16,6 +16,8 @@ import com.rimac.demo.repository.InsuranceRepository;
 @Service
 public class InsuranceServiceImpl implements InsuranceService {
 	
+	DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy"); 
+	
 	@Autowired
 	private InsuranceRepository insuranceRepository;
 
@@ -23,18 +25,15 @@ public class InsuranceServiceImpl implements InsuranceService {
 	@Transactional(readOnly = true)
 	public List<InsuranceResponse> getAllInsurance() {
 		
-		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy"); 
-		
 		List<Insurance> insuraListDB = (List<Insurance>) insuranceRepository.findAll();
 		List<InsuranceResponse> insuranceListResponse = insuraListDB.stream().map(temp -> {
 			InsuranceResponse insuranceItem = new InsuranceResponse();
-			insuranceItem.setInsuranceId(temp.getInsuranceId());
-			insuranceItem.setAnio(temp.getAnio());
-			insuranceItem.setChassis(temp.getChassis());
-			
 			String dateSince = dateFormat.format(temp.getDateSince());
 			String dateUntil = dateFormat.format(temp.getDateUntil());
 			
+			insuranceItem.setInsuranceId(temp.getInsuranceId());
+			insuranceItem.setAnio(temp.getAnio());
+			insuranceItem.setChassis(temp.getChassis());
 			insuranceItem.setDateSince(dateSince);
 			insuranceItem.setDateUntil(dateUntil);
 			insuranceItem.setHasGas(temp.isHasGas() ? "SI" : "NO");
@@ -51,8 +50,24 @@ public class InsuranceServiceImpl implements InsuranceService {
 	}
 
 	@Override
-	public Insurance getInsurance(int insuranceId) {
+	public InsuranceResponse getInsurance(Long insuranceId) {
 		Insurance insurance = insuranceRepository.findByInsuranceId(insuranceId);
-		return insurance;
+		InsuranceResponse insuranceResponse = new InsuranceResponse();
+		
+		String dateSince = dateFormat.format(insurance.getDateSince());
+		String dateUntil = dateFormat.format(insurance.getDateUntil());
+		
+		insuranceResponse.setInsuranceId(insurance.getInsuranceId());
+		insuranceResponse.setAnio(insurance.getAnio());
+		insuranceResponse.setChassis(insurance.getChassis());
+		insuranceResponse.setDateSince(dateSince);
+		insuranceResponse.setDateUntil(dateUntil);
+		insuranceResponse.setHasGas(insurance.isHasGas() ? "SI" : "NO");
+		insuranceResponse.setLastName(insurance.getLastName());
+		insuranceResponse.setMotor(insurance.getMotor());
+		insuranceResponse.setName(insurance.getName());
+		insuranceResponse.setNameContractor(insurance.getNameContractor());
+		insuranceResponse.setNumPolicy(insurance.getNumPolicy());
+		return insuranceResponse;
 	}
 }
