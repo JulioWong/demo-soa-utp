@@ -32,13 +32,12 @@ public class InsuranceServiceImpl implements InsuranceService {
 			insuranceItem.setAnio(temp.getAnio());
 			insuranceItem.setChassis(temp.getChassis());
 			
-			
 			String dateSince = dateFormat.format(temp.getDateSince());
 			String dateUntil = dateFormat.format(temp.getDateUntil());
 			
 			insuranceItem.setDateSince(dateSince);
 			insuranceItem.setDateUntil(dateUntil);
-			//insuranceItem.setHasGas(null);
+			insuranceItem.setHasGas(temp.isHasGas() ? "SI" : "NO");
 			insuranceItem.setLastName(temp.getLastName());
 			insuranceItem.setMotor(temp.getMotor());
 			insuranceItem.setName(temp.getName());
