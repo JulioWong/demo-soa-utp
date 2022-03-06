@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.rimac.demo.dto.response.InsuranceListResponse;
-import com.rimac.demo.entity.Insurance;
 import com.rimac.demo.service.InsuranceService;
 
 @RestController
@@ -28,7 +27,6 @@ public class InsuranceRestController {
 		
 		if (insuranceList != null && insuranceList.size() > 0) {
 			Map<String, Object> response = new HashMap<>();
-			
 			response.put("total", insuranceList.size());
 			response.put("data", insuranceList);
 			

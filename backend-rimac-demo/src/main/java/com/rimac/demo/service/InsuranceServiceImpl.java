@@ -1,5 +1,7 @@
 package com.rimac.demo.service;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -20,15 +22,22 @@ public class InsuranceServiceImpl implements InsuranceService {
 	@Override
 	@Transactional(readOnly = true)
 	public List<InsuranceListResponse> getAllInsurance() {
-		List<Insurance> insuraListDB = (List<Insurance>) insuranceRepository.findAll();
 		
+		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy"); 
+		
+		List<Insurance> insuraListDB = (List<Insurance>) insuranceRepository.findAll();
 		List<InsuranceListResponse> insuranceListResponse = insuraListDB.stream().map(temp -> {
 			InsuranceListResponse insuranceItem = new InsuranceListResponse();
 			insuranceItem.setInsuranceId(temp.getInsuranceId());
 			insuranceItem.setAnio(temp.getAnio());
 			insuranceItem.setChassis(temp.getChassis());
-			//insuranceItem.setDateSince(temp.getDateSince());
-			//insuranceItem.setDateUntil(null);
+			
+			
+			String dateSince = dateFormat.format(temp.getDateSince());
+			String dateUntil = dateFormat.format(temp.getDateUntil());
+			
+			insuranceItem.setDateSince(dateSince);
+			insuranceItem.setDateUntil(dateUntil);
 			//insuranceItem.setHasGas(null);
 			insuranceItem.setLastName(temp.getLastName());
 			insuranceItem.setMotor(temp.getMotor());
