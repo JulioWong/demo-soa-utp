@@ -1,0 +1,109 @@
+{
+	"info": {
+		"_postman_id": "ffda8094-e406-4172-af97-cd6e3834a0bf",
+		"name": "UTP-SOA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "RIMAC-DEMO",
+			"item": [
+				{
+					"name": "All insurance",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8040/api/insurance",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8040",
+							"path": [
+								"api",
+								"insurance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detail insurance",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8040/api/insurance/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8040",
+							"path": [
+								"api",
+								"insurance",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PROVIDER-DEMO",
+			"item": [
+				{
+					"name": "All proposals",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/proposal",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create proposal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Test 1\", \r\n    \"last_name\": \"Test Ap\", \r\n    \"phone\": \"054127822\", \r\n    \"address\": \"Av los babues\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/proposal",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposal"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
