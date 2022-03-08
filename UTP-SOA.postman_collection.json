@@ -102,6 +102,28 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "All trips for proposal",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/proposal/11/trips",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"proposal",
+								"11",
+								"trips"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}

@@ -7,8 +7,8 @@ const format = require('date-format');
 
 class TripService {
 
-  static async getAll() {
-    const execQuery = await findAll();
+  static async getAll(id) {
+    const execQuery = await findAll(id);
     const dataDB = Object.values(
       JSON.parse(JSON.stringify(execQuery))
     );

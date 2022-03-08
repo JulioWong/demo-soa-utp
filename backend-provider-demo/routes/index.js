@@ -8,7 +8,7 @@ const {
 module.exports = app => {
   router.get("/proposal", ProposalController.getAll);
 
-  router.get("/trips", TripController.getAll);
+  router.get("/proposal/:id/trips", TripController.getAll);
 
   router.post("/proposal", ProposalController.newProposal);
 
