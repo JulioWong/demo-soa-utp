@@ -9,10 +9,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.rimac.demo.dto.response.InsuranceResponse;
+import com.rimac.demo.apis.ProviderService;
+import com.rimac.demo.dto.InsuranceResponse;
+import com.rimac.demo.dto.ProviderRequest;
 import com.rimac.demo.service.InsuranceService;
 
 @RestController
@@ -48,15 +52,16 @@ public class InsuranceRestController {
 		
 		return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
 	}
+	
+	@PostMapping("/insurance/{id}/provider")
+	public ResponseEntity<?> sendInsurance(@PathVariable Long id) {
+		
+		Long proposalId = insuranceService.sendProvider(id);
+		
+		if (proposalId != null) {
+			return new ResponseEntity<>(proposalId, HttpStatus.CREATED);
+		}
+		
+		return new ResponseEntity<>("Error to send to provider!", HttpStatus.INTERNAL_SERVER_ERROR); 
+	}
 }
-
-
-
-
-
-
-
-
-
-
-

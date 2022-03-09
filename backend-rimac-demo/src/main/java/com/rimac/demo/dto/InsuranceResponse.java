@@ -1,4 +1,4 @@
-package com.rimac.demo.dto.response;
+package com.rimac.demo.dto;
 
 import java.io.Serializable;
 

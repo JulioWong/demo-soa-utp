@@ -58,7 +58,7 @@ public class Insurance implements Serializable {
 	private String imei;
 	
 	@Column(name = "proposal_id")
-	private String proposalId;
+	private Long proposalId;
 	
 	@Column(name = "has_gas")
 	private boolean hasGas;
@@ -70,6 +70,12 @@ public class Insurance implements Serializable {
 	@Column(name = "date_until", columnDefinition="DATETIME")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dateUntil;
+	
+	@Column(name = "phone")
+	private String phone;
+	
+	@Column(name = "address")
+	private String address;
 	
 	public Long getInsuranceId() {
 		return insuranceId;
@@ -159,11 +165,11 @@ public class Insurance implements Serializable {
 		this.imei = imei;
 	}
 
-	public String getProposalId() {
+	public Long getProposalId() {
 		return proposalId;
 	}
 
-	public void setProposalId(String proposalId) {
+	public void setProposalId(Long proposalId) {
 		this.proposalId = proposalId;
 	}
 
@@ -173,6 +179,22 @@ public class Insurance implements Serializable {
 
 	public void setHasGas(boolean hasGas) {
 		this.hasGas = hasGas;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
 	}
 	
 }

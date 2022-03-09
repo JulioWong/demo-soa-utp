@@ -48,6 +48,28 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Send provider",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8040/api/insurance/1/provider",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8040",
+							"path": [
+								"api",
+								"insurance",
+								"1",
+								"provider"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -109,7 +131,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/proposal/11/trips",
+							"raw": "http://localhost:8080/api/proposal/19/trips",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -118,7 +140,7 @@
 							"path": [
 								"api",
 								"proposal",
-								"11",
+								"19",
 								"trips"
 							]
 						}

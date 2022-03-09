@@ -9,7 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.rimac.demo.dto.response.InsuranceResponse;
+import com.rimac.demo.apis.ProviderService;
+import com.rimac.demo.dto.InsuranceResponse;
+import com.rimac.demo.dto.ProviderRequest;
 import com.rimac.demo.entity.Insurance;
 import com.rimac.demo.repository.InsuranceRepository;
 
@@ -69,5 +71,33 @@ public class InsuranceServiceImpl implements InsuranceService {
 		insuranceResponse.setNameContractor(insurance.getNameContractor());
 		insuranceResponse.setNumPolicy(insurance.getNumPolicy());
 		return insuranceResponse;
+	}
+
+	@Override
+	public Long sendProvider(Long insuranceId) {
+		
+		Insurance insurance = insuranceRepository.findByInsuranceIdAndNoSent(insuranceId);
+		
+		if (insurance != null) {
+			ProviderRequest providerRequest = new ProviderRequest();
+			
+			providerRequest.setName(insurance.getName());
+			providerRequest.setLast_name(insurance.getLastName());
+			providerRequest.setPhone(insurance.getPhone());
+			providerRequest.setAddress(insurance.getAddress());
+			
+			ProviderService providerService = new ProviderService();
+			Long proposalId = providerService.NewProposal(providerRequest);
+			
+			
+			if (proposalId != null) {
+				insurance.setProposalId(proposalId);
+				insuranceRepository.save(insurance);
+			}
+			
+			return proposalId;
+		}
+		
+		return null;
 	}
 }
