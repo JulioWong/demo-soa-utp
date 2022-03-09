@@ -8,7 +8,7 @@ const App = () => (
     <Router>
         <Switch>
           <Route exact path="/" element={<MainPage />} /> 
-          <Route exact path="/detalle/:id" element={<DetailPage />} /> 
+          <Route exact path="/detalle/:insuranceId" element={<DetailPage />} /> 
           <Route path="*" element={<NotFoundPage />} />
         </Switch>
     </Router>

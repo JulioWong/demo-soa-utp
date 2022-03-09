@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 
-import { fetchInsurances } from '../redux/actions/insuranceActions'
+import { getAllInsurances } from '../redux/actions/insuranceActions'
 
 import AppFrame from '../components/AppFrame'
 import Breadcrumbs from '@material-ui/core/Breadcrumbs'
@@ -13,9 +13,9 @@ import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 
-const MainPage = ({insurances, fetchInsurances}) => {
+const MainPage = ({insurances, getAllInsurances}) => {
 
-	useEffect(() => { fetchInsurances() }, [fetchInsurances])
+	useEffect(() => { getAllInsurances() }, [getAllInsurances])
 
 	return (
 			<AppFrame>
@@ -31,7 +31,7 @@ const MainPage = ({insurances, fetchInsurances}) => {
 				<Typography variant="body1" color="inherit">Conoce y gestiona tus seguros desde aquí</Typography>
 				<Grid container item xs={12} spacing={3} style={{marginTop:40}}>
 					{
-						insurances.data.map((item) => (
+						insurances.map((item) => (
 							<Grid item xs={4}>
 								<Card sx={{ minWidth: 275 }}>
 									<CardContent>
@@ -64,11 +64,11 @@ const MainPage = ({insurances, fetchInsurances}) => {
 }
 
 const mapStateToProps = state => ({
-	insurances: state.allInsurances.payload
+	insurances: state.insurances.all
 })
 
 const mapDispachToProps = {
-	fetchInsurances
+	getAllInsurances
 }
 
 export default connect(mapStateToProps, mapDispachToProps)(MainPage)

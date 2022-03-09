@@ -1,16 +1,28 @@
 import { ActionTypes } from "../constants/action-types"
 import axios from "axios";
 
-const url = "http://localhost:8040/api/insurance";
+const url = "http://localhost:8040/api";
 
-export const getInsurances = (insurance) => {
+const getInsurances = (insurance) => {
     return {
-        type : ActionTypes.SELECTED_INSURANCE,
+        type : ActionTypes.ALL_INSURANCE,
+        payload : insurance.data
+    };
+};
+
+const findInsurance = (insurance) => {
+    return {
+        type : ActionTypes.FIND_INSURANCE,
         payload : insurance
     };
 };
 
-export const fetchInsurances = () => async (dispatch) => {
-    const response = await axios.get(url);
+export const getAllInsurances = () => async (dispatch) => {
+    const response = await axios.get(`${url}/insurance`);
     dispatch(getInsurances(response.data)); 
+};
+
+export const findOneInsurance = (insuranceId) => async (dispatch) => {
+    const response = await axios.get(`${url}/insurance/${insuranceId}`);
+    dispatch(findInsurance(response.data)); 
 };

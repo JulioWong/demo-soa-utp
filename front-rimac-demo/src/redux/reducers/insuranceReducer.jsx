@@ -1,22 +1,24 @@
 import { ActionTypes } from "../constants/action-types";
 
 const state_initial = {
-    payload: {
-        total: 0,
-        data: [
-
-        ]
-    }
+    all: [],
+    one: {}
 }
 
 export const insuranceReducer = (state = state_initial, {type, payload}) => {
     switch (type) {
-        case ActionTypes.SELECTED_INSURANCE:
+        case ActionTypes.ALL_INSURANCE:
             return {
                 ...state, 
-                payload: payload,
+                all: payload,
             };
-               
+
+        case ActionTypes.FIND_INSURANCE:
+            return {
+                ...state, 
+                one: payload,
+            };
+            
         default:
             return state;
     };
