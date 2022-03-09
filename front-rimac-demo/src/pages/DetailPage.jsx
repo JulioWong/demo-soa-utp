@@ -54,7 +54,7 @@ const DetailPage = ({ insurance, findOneInsurance }) => {
           <InfoDetail insurance={insurance}/>
         </TabPanel>
         <TabPanel value={valueTab} index={1}>
-          <TripTable />
+          <TripTable proposalId={insurance.proposalId}/>
         </TabPanel>
       </Box>
     </AppFrame>

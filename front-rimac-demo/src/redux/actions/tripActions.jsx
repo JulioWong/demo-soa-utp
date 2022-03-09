@@ -6,11 +6,12 @@ const url = "http://localhost:8080/api";
 const getTrips = (trips) => {
     return {
         type : ActionTypes.ALL_TRIPS,
-        payload : trips.data
+        payload : trips
     };
 };
 
 export const getAllTrips = (proposalId) => async (dispatch) => {
     const response = await axios.get(`${url}/proposal/${proposalId}/trips`);
+    console.log("LLEGUE AQUIII", response);
     dispatch(getTrips(response.data));
 };

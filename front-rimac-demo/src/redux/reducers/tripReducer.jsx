@@ -1,7 +1,8 @@
 import { ActionTypes } from "../constants/action-types";
 
 const state_initial = {
-    all: [],
+    totalKm: 0,
+    data: [],
 }
 
 export const tripReducer = (state = state_initial, {type, payload}) => {
@@ -9,7 +10,7 @@ export const tripReducer = (state = state_initial, {type, payload}) => {
     case ActionTypes.ALL_TRIPS:
       return {
           ...state, 
-          all: payload,
+          ...payload,
       };
         
     default:
