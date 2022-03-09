@@ -24,6 +24,7 @@ public class ProviderService {
 		
 		try {
 			providerResponse = providerApi.createProposal(providerRequest).execute().body();
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

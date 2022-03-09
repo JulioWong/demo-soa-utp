@@ -34,7 +34,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8040/api/insurance/1",
+							"raw": "http://localhost:8040/api/insurance/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -43,7 +43,7 @@
 							"path": [
 								"api",
 								"insurance",
-								"1"
+								"2"
 							]
 						}
 					},
@@ -103,7 +103,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Test 1\", \r\n    \"last_name\": \"Test Ap\", \r\n    \"phone\": \"054127822\", \r\n    \"address\": \"Av los babues\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Test 1\", \r\n    \"last_name\": \"Test Ap\", \r\n    \"phone\": \"054127822\", \r\n    \"address\": \"Av los babues\",\r\n    \"plate\": \"AAA123\",\r\n    \"brand\": \"brand\",\r\n    \"model\": \"model1\",\r\n    \"anio\": 2018\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

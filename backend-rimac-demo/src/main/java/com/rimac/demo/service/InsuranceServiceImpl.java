@@ -94,6 +94,9 @@ public class InsuranceServiceImpl implements InsuranceService {
 			providerRequest.setPhone(insurance.getPhone());
 			providerRequest.setAddress(insurance.getAddress());
 			providerRequest.setPlate(insurance.getPlate());
+			providerRequest.setBrand(insurance.getBrand());
+			providerRequest.setModel(insurance.getModel());
+			providerRequest.setAnio(insurance.getAnio());
 			
 			ProviderService providerService = new ProviderService();
 			Long proposalId = providerService.NewProposal(providerRequest);

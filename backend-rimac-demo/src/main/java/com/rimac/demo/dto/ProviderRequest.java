@@ -1,12 +1,19 @@
 package com.rimac.demo.dto;
 
-public class ProviderRequest {
+import java.io.Serializable;
 
+public class ProviderRequest implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	
 	private String name; 
 	private String last_name;
 	private String phone;
 	private String address;
 	private String plate;
+	private String brand;
+	private String model;
+	private int anio;
 	
 	public String getName() {
 		return name;
@@ -47,5 +54,28 @@ public class ProviderRequest {
 	public void setPlate(String plate) {
 		this.plate = plate;
 	}
-	
+
+	public String getBrand() {
+		return brand;
+	}
+
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+
+	public String getModel() {
+		return model;
+	}
+
+	public void setModel(String model) {
+		this.model = model;
+	}
+
+	public int getAnio() {
+		return anio;
+	}
+
+	public void setAnio(int anio) {
+		this.anio = anio;
+	}
 }
