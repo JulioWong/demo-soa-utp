@@ -14,10 +14,11 @@ CREATE TABLE `insurance` (
   `name_contractor` varchar(255) DEFAULT NULL,
   `num_policy` varchar(255) DEFAULT NULL,
   `proposal_id` varchar(255) DEFAULT NULL,
+  `phone` varchar(100) DEFAULT NULL,
+  `address` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`insuranceid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
-
 INSERT INTO rimac_seguros.insurance
-(anio, chassis, date_since, date_until, has_gas, imei, last_name, motor, name, name_contractor, num_policy, proposal_id)
-VALUES(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(anio, chassis, date_since, date_until, has_gas, imei, last_name, motor, name, name_contractor, num_policy, proposal_id, phone, address)
+VALUES(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
