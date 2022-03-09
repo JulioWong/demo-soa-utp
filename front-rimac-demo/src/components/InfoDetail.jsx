@@ -4,7 +4,7 @@ import ItemBlock from './ItemBlock';
 
 const InfoDetail = ({ insurance }) => {
   return (
-    <Grid container item direction='column' spacing={3}>
+    <Grid container direction='column' spacing={3}>
       <ItemBlock title="Número de póliza" value={insurance.numPolicy}/>
       <ItemBlock title="Vigencia" value={`Del ${insurance.dateSince} al ${insurance.dateUntil}`}/>
       <ItemBlock title="Contratante y Responsable" value={insurance.nameContractor}/>

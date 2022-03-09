@@ -12,6 +12,5 @@ const getTrips = (trips) => {
 
 export const getAllTrips = (proposalId) => async (dispatch) => {
     const response = await axios.get(`${url}/proposal/${proposalId}/trips`);
-    console.log("LLEGUE AQUIII", response);
     dispatch(getTrips(response.data));
 };

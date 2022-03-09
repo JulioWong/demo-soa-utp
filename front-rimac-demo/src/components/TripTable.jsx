@@ -28,7 +28,7 @@ const TripTable = ({proposalId, trips, getAllTrips}) => {
         <TableBody>
           {
             trips.data.map((item) => (
-              <TableRow key={1}>
+              <TableRow key={`${item.date}${item.since}`}>
                 <TableCell component="th" scope="row">
                   {item.km} km	
                 </TableCell>

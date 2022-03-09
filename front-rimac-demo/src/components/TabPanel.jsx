@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 import Box from '@material-ui/core/Box';
-import Typography from '@material-ui/core/Typography'
 
 const TabPanel = ({ children, value, index, ...other }) => {
   return (
@@ -14,7 +13,7 @@ const TabPanel = ({ children, value, index, ...other }) => {
     >
       {value === index && (
         <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
+          {children}
         </Box>
       )}
     </div>

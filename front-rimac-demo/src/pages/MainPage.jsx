@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-
 import { getAllInsurances } from '../redux/actions/insuranceActions'
-
 import AppFrame from '../components/AppFrame'
 import Breadcrumbs from '@material-ui/core/Breadcrumbs'
 import Typography from '@material-ui/core/Typography'
@@ -19,7 +17,11 @@ const MainPage = ({insurances, getAllInsurances}) => {
 
 	return (
 			<AppFrame>
-				<Breadcrumbs separator="›" aria-label="breadcrumb" class="breadcrumb">
+				<Breadcrumbs separator="›" aria-label="breadcrumb" style={{ 
+					margin: "30px 0 40px 0",
+					color: "#676f8f",
+					fontSize: 13,
+				}}>
 					<Link underline="hover" color="inherit" href="#">
 						<HiHome />
 					</Link>
@@ -32,12 +34,12 @@ const MainPage = ({insurances, getAllInsurances}) => {
 				<Grid container item xs={12} spacing={3} style={{marginTop:40}}>
 					{
 						insurances.map((item) => (
-							<Grid item xs={4}>
+							<Grid item xs={4} key={item.insuranceId}>
 								<Card sx={{ minWidth: 275 }}>
 									<CardContent>
-										<div class="expired-policy-group expired-policy-group--info">
-											<span class="icon-round"></span>
-											<span class="expired-policy"> Vigente hasta el {item.dateUntil}</span>
+										<div className="expired-policy-group expired-policy-group--info">
+											<span className="icon-round"></span>
+											<span className="expired-policy"> Vigente hasta el {item.dateUntil}</span>
 										</div>
 										<Typography variant='body2'>PLACA {item.plate}</Typography>
 										<Typography variant="h6" component="div">
@@ -45,13 +47,9 @@ const MainPage = ({insurances, getAllInsurances}) => {
 										</Typography>
 									</CardContent>
 									<CardActions style={{flexDirection: "row", justifyContent: "flex-end", marginBottom:30, marginRight:30}}>
-										<Link underline="hover" color="inherit"  href={`/detalle/${item.insuranceId}`} to={`/detalle/${item.insuranceId}`} class="detalle">
+										<Link underline="hover" color="inherit"  href={`/detalle/${item.insuranceId}`} to={`/detalle/${item.insuranceId}`} style={{color: "#6769ff"}}>
 											Mis seguros {'>'}
 										</Link>
-
-										
-
-
 									</CardActions>
 								</Card>
 							</Grid>

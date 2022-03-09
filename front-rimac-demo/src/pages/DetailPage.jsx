@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, forwardRef } from 'react'
 import { connect } from 'react-redux'
 import { useParams } from 'react-router-dom';
 import TabPanel from '../components/TabPanel'
@@ -15,6 +15,12 @@ import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
 import { findOneInsurance } from '../redux/actions/insuranceActions'
 
+const MuiLink = forwardRef((props, ref) => (
+  <Link underline="hover" color="inherit" ref={ref} {...props} >
+    {props.children}  
+  </Link>
+));
+
 const DetailPage = ({ insurance, findOneInsurance }) => {
 
   const { insuranceId } = useParams();
@@ -26,25 +32,25 @@ const DetailPage = ({ insurance, findOneInsurance }) => {
     setTab(newValue);
   };
 
+  const plate = insurance.plate ? insurance.plate : "";
+
   return (
     <AppFrame>
-      <Breadcrumbs separator="›" aria-label="breadcrumb" class="breadcrumb">
-        <Link underline="hover" color="inherit" href="/">
-          <HiHome />
-        </Link>
-        <Link underline="hover" color="inherit" href="/">
-          Mis seguros
-        </Link>
-        <Link underline="hover" color="inherit" href="#">
-          {insurance.plate}
-        </Link>
+      <Breadcrumbs separator="›" aria-label="breadcrumb" style={{ 
+        margin: "30px 0 40px 0",
+        color: "#676f8f",
+        fontSize: 13,
+      }}>
+        <MuiLink href="/"><HiHome /></MuiLink>
+        <MuiLink href="/">Mis seguros</MuiLink>
+        <MuiLink href="#">{plate}</MuiLink>
       </Breadcrumbs>
       <Typography variant="h4" color="inherit" style={{fontWeight:"bold"}}>Seguro vehicular</Typography>
       <Typography variant="body1" color="inherit" style={{marginTop:20}}>Placa {insurance.plate}</Typography>
 
       <Box sx={{ width: '100%' }} style={{marginTop:30}}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-          <Tabs value={valueTab} onChange={handleChangeTabs} aria-label="basic tabs example">
+          <Tabs value={valueTab} onChange={handleChangeTabs}>
             <Tab label="Detalle" value={0} />
             <Tab label="Mis viajes" value={1} />
           </Tabs>
