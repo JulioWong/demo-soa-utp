@@ -18,9 +18,10 @@ public class InsuranceResponse implements Serializable {
     private String dateSince;
     private String dateUntil;
     private String plate;
+    private Long proposalId;
     
 	public InsuranceResponse(Long insuranceId, String name, String lastName, String numPolicy, String nameContractor,
-			int anio, String chassis, String motor, String hasGas, String dateSince, String dateUntil, String plate) {
+			int anio, String chassis, String motor, String hasGas, String dateSince, String dateUntil, String plate, Long proposalId) {
 		super();
 		this.insuranceId = insuranceId;
 		this.name = name;
@@ -34,6 +35,7 @@ public class InsuranceResponse implements Serializable {
 		this.dateSince = dateSince;
 		this.dateUntil = dateUntil;
 		this.plate = plate;
+		this.proposalId = proposalId;
 	}
 
 	public InsuranceResponse() {
@@ -134,6 +136,18 @@ public class InsuranceResponse implements Serializable {
 
 	public void setPlate(String plate) {
 		this.plate = plate;
+	}
+
+	public Long getProposalId() {
+		return proposalId;
+	}
+
+	public void setProposalId(Long proposalId) {
+		this.proposalId = proposalId;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 	
 }

@@ -33,4 +33,4 @@ const TripTable = () => (
   </TableContainer>
 )
 
-export default TripTable
+export default connect(mapStateToProps, mapDispachToProps)(TripTable)

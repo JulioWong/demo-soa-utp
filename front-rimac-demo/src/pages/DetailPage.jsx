@@ -19,7 +19,7 @@ const DetailPage = ({ insurance, findOneInsurance }) => {
 
   const { insuranceId } = useParams();
 
-  useEffect(() => { findOneInsurance(insuranceId) }, [findOneInsurance])
+  useEffect(() => { findOneInsurance(insuranceId) }, [findOneInsurance, insuranceId])
 
   const [valueTab, setTab] = React.useState(0);
   const handleChangeTabs = (event, newValue) => {
