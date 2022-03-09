@@ -9,8 +9,9 @@ CREATE TABLE `proposal` (
   `imei` varchar(100) DEFAULT NULL,
   `phone` varchar(100) DEFAULT NULL,
   `address` varchar(100) DEFAULT NULL,
+  `plate` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`proposalid`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `trips` (
   `tripid` int(11) NOT NULL AUTO_INCREMENT,
@@ -27,8 +28,8 @@ CREATE TABLE `trips` (
 
 
 INSERT INTO provider_example.proposal
-(name, last_name, timestamp_created, timestamp_modified, imei, phone, address)
-VALUES(NULL, NULL, current_timestamp(), current_timestamp(), NULL, NULL, NULL);
+(name, last_name, timestamp_created, timestamp_modified, imei, phone, address, plate)
+VALUES(NULL, NULL, current_timestamp(), current_timestamp(), NULL, NULL, NULL, NULL);
 INSERT INTO provider_example.trips
 (km, datetime_since, datetime_until, timestamp_created, timestamp_updated, proposalid)
 VALUES(NULL, NULL, NULL, current_timestamp(), current_timestamp(), NULL);

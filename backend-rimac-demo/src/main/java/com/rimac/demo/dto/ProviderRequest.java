@@ -6,6 +6,7 @@ public class ProviderRequest {
 	private String last_name;
 	private String phone;
 	private String address;
+	private String plate;
 	
 	public String getName() {
 		return name;
@@ -37,6 +38,14 @@ public class ProviderRequest {
 	
 	public void setAddress(String address) {
 		this.address = address;
+	}
+
+	public String getPlate() {
+		return plate;
+	}
+
+	public void setPlate(String plate) {
+		this.plate = plate;
 	}
 	
 }

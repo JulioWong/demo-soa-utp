@@ -44,6 +44,7 @@ public class InsuranceServiceImpl implements InsuranceService {
 			insuranceItem.setName(temp.getName());
 			insuranceItem.setNameContractor(temp.getNameContractor());
 			insuranceItem.setNumPolicy(temp.getNumPolicy());
+			insuranceItem.setPlate(temp.getPlate());
 			return insuranceItem;
 			
 		}).collect(Collectors.toList());
@@ -70,6 +71,7 @@ public class InsuranceServiceImpl implements InsuranceService {
 		insuranceResponse.setName(insurance.getName());
 		insuranceResponse.setNameContractor(insurance.getNameContractor());
 		insuranceResponse.setNumPolicy(insurance.getNumPolicy());
+		insuranceResponse.setPlate(insurance.getPlate());
 		return insuranceResponse;
 	}
 
@@ -85,6 +87,7 @@ public class InsuranceServiceImpl implements InsuranceService {
 			providerRequest.setLast_name(insurance.getLastName());
 			providerRequest.setPhone(insurance.getPhone());
 			providerRequest.setAddress(insurance.getAddress());
+			providerRequest.setPlate(insurance.getPlate());
 			
 			ProviderService providerService = new ProviderService();
 			Long proposalId = providerService.NewProposal(providerRequest);

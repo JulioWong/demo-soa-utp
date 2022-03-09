@@ -17,9 +17,10 @@ public class InsuranceResponse implements Serializable {
     private String hasGas;
     private String dateSince;
     private String dateUntil;
+    private String plate;
     
 	public InsuranceResponse(Long insuranceId, String name, String lastName, String numPolicy, String nameContractor,
-			int anio, String chassis, String motor, String hasGas, String dateSince, String dateUntil) {
+			int anio, String chassis, String motor, String hasGas, String dateSince, String dateUntil, String plate) {
 		super();
 		this.insuranceId = insuranceId;
 		this.name = name;
@@ -32,6 +33,7 @@ public class InsuranceResponse implements Serializable {
 		this.hasGas = hasGas;
 		this.dateSince = dateSince;
 		this.dateUntil = dateUntil;
+		this.plate = plate;
 	}
 
 	public InsuranceResponse() {
@@ -125,4 +127,13 @@ public class InsuranceResponse implements Serializable {
 	public void setDateUntil(String dateUntil) {
 		this.dateUntil = dateUntil;
 	}
+
+	public String getPlate() {
+		return plate;
+	}
+
+	public void setPlate(String plate) {
+		this.plate = plate;
+	}
+	
 }

@@ -16,13 +16,14 @@ class ProposalService {
 
   static async createProposal(data) {
     const request = data.body
-    if (request && request.name && request.last_name && request.phone && request.address) {
+    if (request && request.name && request.last_name && request.phone && request.address && request.plate) {
       const execQuery = await putItem(
         [
           request.name, 
           request.last_name, 
           request.phone, 
-          request.address
+          request.address,
+          request.plate
         ]);
       const dataDB = JSON.parse(JSON.stringify(execQuery));
       

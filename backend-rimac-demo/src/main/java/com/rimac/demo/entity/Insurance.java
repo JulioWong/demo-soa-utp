@@ -77,6 +77,9 @@ public class Insurance implements Serializable {
 	@Column(name = "address")
 	private String address;
 	
+	@Column(name = "plate")
+	private String plate;
+	
 	public Long getInsuranceId() {
 		return insuranceId;
 	}
@@ -196,5 +199,12 @@ public class Insurance implements Serializable {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	
+
+	public String getPlate() {
+		return plate;
+	}
+
+	public void setPlate(String plate) {
+		this.plate = plate;
+	}
 }

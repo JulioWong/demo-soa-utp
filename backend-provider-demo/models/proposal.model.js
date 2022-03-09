@@ -8,7 +8,7 @@ class ProposalModel {
 
   static async putItem(row) {
     return await query(
-      'INSERT INTO proposal(name, last_name, phone, address) VALUES (?, ?, ?, ?)', 
+      'INSERT INTO proposal(name, last_name, phone, address, plate) VALUES (?, ?, ?, ?, ?)', 
       row
     )
   }
