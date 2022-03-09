@@ -45,9 +45,13 @@ const MainPage = ({insurances, fetchInsurances}) => {
 										</Typography>
 									</CardContent>
 									<CardActions style={{flexDirection: "row", justifyContent: "flex-end", marginBottom:30, marginRight:30}}>
-										<Link underline="hover" color="inherit" href="/detalle/1" class="detalle">
+										<Link underline="hover" color="inherit"  href={`/detalle/${item.insuranceId}`} to={`/detalle/${item.insuranceId}`} class="detalle">
 											Mis seguros {'>'}
 										</Link>
+
+										
+
+
 									</CardActions>
 								</Card>
 							</Grid>

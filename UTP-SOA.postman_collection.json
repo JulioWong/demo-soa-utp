@@ -55,7 +55,7 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8040/api/insurance/1/provider",
+							"raw": "http://localhost:8040/api/insurance/2/provider",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -64,7 +64,7 @@
 							"path": [
 								"api",
 								"insurance",
-								"1",
+								"2",
 								"provider"
 							]
 						}
