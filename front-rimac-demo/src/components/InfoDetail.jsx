@@ -9,6 +9,8 @@ const InfoDetail = ({ insurance }) => {
       <ItemBlock title="Vigencia" value={`Del ${insurance.dateSince} al ${insurance.dateUntil}`}/>
       <ItemBlock title="Contratante y Responsable" value={insurance.nameContractor}/>
       <ItemBlock title="Asegurado" value={`${insurance.name} ${insurance.lastName}`}/>
+      <ItemBlock title="Marca" value={insurance.brand}/>
+      <ItemBlock title="Modelo" value={insurance.model}/>
       <ItemBlock title="Año" value={insurance.anio}/>
       <ItemBlock title="Chasis" value={insurance.chassis}/>
       <ItemBlock title="Motor" value={insurance.motor}/>
