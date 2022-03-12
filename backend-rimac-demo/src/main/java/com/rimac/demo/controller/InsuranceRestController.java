@@ -21,8 +21,12 @@ import com.rimac.demo.dto.InsuranceResponse;
 import com.rimac.demo.dto.ProviderRequest;
 import com.rimac.demo.service.InsuranceService;
 
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.info.Info;
+
 @RestController
 @CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
+@OpenAPIDefinition(info = @Info(title = "Rimac API", version = "2.0", description = "Insurance Information"))
 @RequestMapping("/api")
 public class InsuranceRestController {
 
